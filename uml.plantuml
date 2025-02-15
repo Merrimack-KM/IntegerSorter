@@ -1,0 +1,36 @@
+@startuml
+title Linked List Sorting Program Class Diagram
+
+interface IntegerInput {
+    + readIntegers(): List<Integer>
+}
+
+interface IntegerSorter {
+    + sort(integers: List<Integer>): void
+}
+
+interface IntegerDisplayer {
+    + display(integers: List<Integer>): void
+}
+
+class ConsoleIntegerInput implements IntegerInput {
+    + readIntegers(): List<Integer>
+}
+
+class AscendingOrderSorter implements IntegerSorter {
+    + sort(integers: List<Integer>): void
+}
+
+class ConsoleIntegerDisplayer implements IntegerDisplayer {
+    + display(integers: List<Integer>): void
+}
+
+class MainProgram {
+    + main(args: String[]): void
+}
+
+MainProgram --> ConsoleIntegerInput : instantiates
+MainProgram --> AscendingOrderSorter : instantiates
+MainProgram --> ConsoleIntegerDisplayer : instantiates
+
+@enduml
