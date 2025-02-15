@@ -5,7 +5,7 @@ This repository contains two versions of the Integer Sorter Program focusing on 
 
 ## Requirements
   - Java Development Kit (JDK) 8 or higher
-  - Latest version of PlantUML (Optional)
+  - Latest version of PlantUML [(Optional)](https://plantuml.com/download)
 
 ### How to Run the Program
   ```bash
