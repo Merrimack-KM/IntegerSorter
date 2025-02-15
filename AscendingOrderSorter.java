@@ -1,5 +1,5 @@
 import java.util.Collections;
-import java.util.List;
+import java.util.Stack;
 
 /**
  * Implementation of IntegerSorter that sorts integers in ascending order.
@@ -22,14 +22,14 @@ public class AscendingOrderSorter implements IntegerSorter {
     }
     /**
      * Sorts the list of integers in ascending order.
-     *
+     * Updated to use a stack
      * @param integers The list of integers to sort.
-     * @since 1.0.0
+     * @since 1.1.0
      */
     @Override
-    public void sort(List<Integer> integers) {
-        // Use of Collections.sort method to not reinvent the sorting algorithm
-        Collections.sort(integers);
+    public void sort(Stack<Integer> integers) {
+        // Use of Collections.sort method to not reinvent the sorting algorithm.
+        // Pretty 
+        Collections.sort(integers);  
     }
 }
-

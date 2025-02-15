@@ -1,28 +1,28 @@
 @startuml
-title Linked List Sorting Program Class Diagram
+title Stack Sorting Program Class Diagram
 
 interface IntegerInput {
-    + readIntegers(): List<Integer>
+    + readIntegers(): Stack<Integer>
 }
 
 interface IntegerSorter {
-    + sort(integers: List<Integer>): void
+    + sort(integers: Stack<Integer>): void
 }
 
 interface IntegerDisplayer {
-    + display(integers: List<Integer>): void
+    + display(integers: Stack<Integer>): void
 }
 
 class ConsoleIntegerInput implements IntegerInput {
-    + readIntegers(): List<Integer>
+    + readIntegers(): Stack<Integer>
 }
 
 class AscendingOrderSorter implements IntegerSorter {
-    + sort(integers: List<Integer>): void
+    + sort(integers: Stack<Integer>): void
 }
 
 class ConsoleIntegerDisplayer implements IntegerDisplayer {
-    + display(integers: List<Integer>): void
+    + display(integers: Stack<Integer>): void
 }
 
 class MainProgram {

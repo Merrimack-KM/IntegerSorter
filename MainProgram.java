@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.Stack;
 
 /**
  * Running Commands: 
@@ -8,6 +8,9 @@ import java.util.List;
  * <code>javadoc -d doc *.java</code>
  * 
  * Main application class that orchestrates reading, sorting, and displaying integers.
+ * 
+ * V1.0.0 = LinkedList Implementation
+ * V1.1.0 = Stack Implementation
  *
  * <p><strong>SOLID Principles:</strong></p>
  * <ul>
@@ -24,11 +27,13 @@ import java.util.List;
  *   <li>Utilization of built-in Data Structures such as List and LinkedList.</li>
  *   <li>Utilization of built-in methods such as Collection.sort() for the LinkedList sorting algorithm.</li>
  *   <li>Other reiterations available in the code base.</li>
+ *   <li>Reuse of existing code from a LinkedList to a Stack. The ConsoleIntegerDisplayer has the most updating.</li>
+ *   <li>Another example would be the isValidInteger function in the ConsoleIntegerInput Class, I kept the 'since' to V1.0.0 since it hasn't changed.</li>
  * </ul>
  * 
  * @author Kevin Maguire
- * @version 1.0.0
- * @since Week 4 of CSC6301
+ * @version 1.1.0
+ * @since Week 5 of CSC6301
  */
 public class MainProgram {
     /**
@@ -41,7 +46,7 @@ public class MainProgram {
     /**
      * Executes the program.
      * @param args None.
-     * @since 1.0.0
+     * @since 1.1.0
      */
     public static void main(String[] args) {
         // Create instances of the input, sorter, and displayer Class Objects.
@@ -49,8 +54,8 @@ public class MainProgram {
         IntegerSorter listSorter = new AscendingOrderSorter();
         IntegerDisplayer displayOutput = new ConsoleIntegerDisplayer();
 
-        // Read integers into a List
-        List<Integer> integers = userInput.readIntegers();
+        // Read integers into a STack
+        Stack<Integer> integers = userInput.readIntegers();
 
         // Check if integers were entered
         if (integers.isEmpty()) {
@@ -58,10 +63,10 @@ public class MainProgram {
             return;
         }
 
-        // Sort the Linked List Object
+        // Sort the Stack Object
         listSorter.sort(integers);
 
-        // Display the Linked List Object in a CLI-friendly format
+        // Display the Stack Object in a CLI-friendly format
         displayOutput.display(integers);
     }
 }

@@ -1,6 +1,5 @@
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * Implementation of IntegerInput that reads integers from the console.
@@ -25,14 +24,14 @@ public class ConsoleIntegerInput implements IntegerInput {
     /**
      * Reads integers from the console as a single line with spaces.
      *
-     * @return A list of integers entered by the user.
-     * @since 1.0.0
+     * @return A stack of integers entered by the user.
+     * @since 1.1.0
      * 
      */
     @Override
-    public List<Integer> readIntegers() {
-        // Uses the LinkedList collection to not reinvent or reimplement the LinkedList Data Structure
-        List<Integer> integers = new LinkedList<>();
+    public Stack<Integer> readIntegers() {
+        // Uses the Stack Util to not reinvent or reimplement the Stack Data Structure
+        Stack<Integer> integers = new Stack<>();
         
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter all integers on one line separated by spaces:\n>> ");
@@ -42,7 +41,7 @@ public class ConsoleIntegerInput implements IntegerInput {
         // 
         for (String inputInteger : inputIntegers) {
             if (isValidInteger(inputInteger)) {
-                integers.add(Integer.parseInt(inputInteger)); // Using built-in .add() method of LinkedList<> class.
+                integers.push(Integer.parseInt(inputInteger)); // Using built-in .push() method of Stack class.
             } else {
                 System.out.println("'" + inputInteger + "' is not an integer... Ignoring.");
             }
@@ -59,7 +58,7 @@ public class ConsoleIntegerInput implements IntegerInput {
      * @param input The input string.
      * @return True if the input string can be converted to an integer.
      * @throws NumberFormatException if the input is invalid.
-     * @since Week 4 of CSC6301
+     * @since 1.0.0
      */
     private boolean isValidInteger(String input) {
         try {

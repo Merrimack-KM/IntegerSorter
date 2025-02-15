@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.Stack;
 
 /**
  * Implementation of IntegerDisplayer that displays the integers to the console.
@@ -14,7 +14,7 @@ import java.util.List;
 public class ConsoleIntegerDisplayer implements IntegerDisplayer {
 
     /**
-     * Default Constructor. Comments to remove Javadoc warnings.
+     * Default Constructor.
      */
     public ConsoleIntegerDisplayer() {
         // Unused
@@ -22,24 +22,24 @@ public class ConsoleIntegerDisplayer implements IntegerDisplayer {
 
     /**
      * Displays the list of integers to the console.
-     *
+     * 
      * @param integers of integers to display.
-     * @since 1.0.0
+     * @since 1.1.0
      */
     @Override
-    public void display(List<Integer> integers) {
-        // Currently, no need for empty check due to MainProgram
-        // Iterate over Linked List to create the output string.
-        String output = "Head -> ";
-        for (int i = 0; i < integers.size(); i++) {
-            output += "[" + integers.get(i) + "]";
-            if (i < integers.size() - 1) {
-                output += " <-> ";
-            }
+    public void display(Stack<Integer> integers) {
+        /** Currently, no need for empty check due to MainProgram
+         * 
+         * If you were looking at the stack, the smallest value is at the bottom.  
+         * It is printed in reverse to the user.
+        */
+        String output = "Stack: Top --> ";
+        while (!integers.isEmpty()) { // Pop from the stack until in is empty
+            output += "[" + integers.pop() + "] "; //Reusing stack pop methods
         }
-        output += " <- Tail";
+        output += "<-- Bottom";
 
-        // Output Sorted LinkedList
+        // Output Sorted Stack from Top to Bottom.
         System.out.println(output);
     }
 }

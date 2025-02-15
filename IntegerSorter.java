@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.Stack;
 
 /**
  * Interface for sorting integers.
@@ -10,10 +10,9 @@ public interface IntegerSorter {
 
     /**
      * Sorts the input list of integers.
-     *
-     * @param integers List of integers to sort.
-     * @since 1.0.0
+     * 
+     * @param integers Stack of integers to sort.
+     * @since 1.1.0
      */
-    void sort(List<Integer> integers);
+    void sort(Stack<Integer> integers);
 }
-

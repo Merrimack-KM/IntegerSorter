@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.Stack;
 
 /**
  * Interface for inputting integers.
@@ -10,11 +10,9 @@ public interface IntegerInput {
 
     /**
      * Reads integers from input.
-     *
+     * 
      * @return List of integers.
-     * @since 1.0.0
+     * @since 1.1.0
      */
-    List<Integer> readIntegers();
+    Stack<Integer> readIntegers();
 }
-
-
